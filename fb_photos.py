@@ -8,9 +8,9 @@ access_token = sys.argv[2]
 def get_photos(account_id, access_token, after=None):
     #  after contains a query string with the next page
     if after:
-        payload = {'type': 'uploaded', 'access_token': access_token, 'limit': '5', 'after': after}
+        payload = {'type': 'uploaded', 'access_token': access_token, 'limit': '25', 'after': after}
     else:
-        payload = {'type': 'uploaded', 'access_token': access_token, 'limit': '5'}
+        payload = {'type': 'uploaded', 'access_token': access_token, 'limit': '25'}
 
     try:
         x = requests.get(f'https://graph.facebook.com/v10.0/{account_id}/photos', params=payload)
